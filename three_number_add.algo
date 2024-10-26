@@ -1,0 +1,33 @@
+ALGORITHM three_number_add
+VAR
+    phrase : STRING := 'Bienvenue à la programmation.'
+    longueur : INTEGER := 0
+    nombre_de_mots : INTEGER := 0
+    nombre_de_voyelles : INTEGER := 0
+    caractere : CHAR := ''
+    i : INTEGER := 1
+
+BEGIN
+    WHILE (caractere ≠ ".") DO
+        caractere := phrase[i]
+        longueur := longueur + 1
+
+        IF (caractere IN 'aeiouAEIOU') THEN
+            nombre_de_voyelles := nombre_de_voyelles + 1
+        END_IF
+
+        IF (caractere = ' ') THEN
+            nombre_de_mots := nombre_de_mots + 1
+        END_IF
+
+        i := i + 1
+    END_WHILE
+
+    IF (longueur > 0 AND phrase[i] ≠ ' ') THEN
+        nombre_de_mots := nombre_de_mots + 1
+    END_IF
+
+    Write("Longueur de la phrase : ", longueur)
+    Write("Nombre de mots : ", nombre_de_mots)
+    Write("Nombre de voyelles : ", nombre_de_voyelles)
+END
